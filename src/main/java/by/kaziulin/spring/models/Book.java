@@ -19,9 +19,50 @@ public class Book {
     @Pattern(regexp = "[A-Z]\\w+ [A-Z]\\w+", message = "Author Name wrong format ")
      private String authorName;
 
-    @NotEmpty
-    @Max(value = 2023, message = "maximum year - 2023")
-    @Pattern(regexp = "\\d{4}", message = "Year wrong format ")
-    private long date;
 
+    @Min(value =  1, message = "minimum year - 1")
+    @Max(value = 2023, message = "maximum year - 2023")
+    //@Pattern(regexp = "\\d{4}", message = "Year wrong format ")
+    private int date;
+
+    public Book(int id, String name, String authorName, int date) {
+        this.id = id;
+        this.name = name;
+        this.authorName = authorName;
+        this.date = date;
+    }
+
+    public Book(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public void setDate(int date) {
+        this.date = date;
+    }
 }
